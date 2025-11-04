@@ -257,7 +257,7 @@ body {
   25%,
   54%,
   56%,
-  100% {
+   100% {
     opacity: 0.05;
   }
   20%,
@@ -340,22 +340,6 @@ body.terminal.forum-page .terminal-container {
 /* ---------- FORUM STYLING ---------- */
 .terminal-forum {
   margin-top: 2rem;
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(0, 255, 204, 0.3);
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
-  display: none;
-}
-
-.terminal-forum.active {
-  display: block;
-}
-
-.giscus {
-  font-family: 'VT323', monospace;
-}
-
 .terminal-note {
   margin-top: 1.25rem;
   color: rgba(0, 255, 204, 0.85);
@@ -366,20 +350,25 @@ body.terminal.forum-page .terminal-container {
   color: #ff00ff;
 }
 
-.terminal-tabs {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+.forum-providers {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 1.25rem;
 }
 
-.tab-button {
+.provider-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.provider-tab {
   background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(0, 255, 204, 0.4);
+  border: 1px solid rgba(0, 255, 204, 0.35);
   color: #00ffcc;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 0.6rem 1rem;
+  padding: 0.6rem 1.1rem;
   cursor: pointer;
   font-family: 'VT323', monospace;
   font-size: 0.85rem;
@@ -387,23 +376,63 @@ body.terminal.forum-page .terminal-container {
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
-.tab-button:hover,
-.tab-button:focus {
+.provider-tab:hover,
+.provider-tab:focus {
   outline: none;
   border-color: #ff00ff;
   color: #ff99ff;
   box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
 }
 
-.tab-button.active {
-  background: rgba(255, 0, 255, 0.15);
+.provider-tab.is-active {
+  background: rgba(255, 0, 255, 0.12);
   border-color: #ff00ff;
   color: #ffb3ff;
 }
 
-#disqus_thread {
-  color: #fff;
-  background: #0a0a0a;
+.forum-panel {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 255, 204, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  padding: 1.1rem;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+  display: none;
+}
+
+.giscus {
+.forum-panel.giscus {
+  font-family: 'VT323', monospace;
+}
+
+.forum-panel.is-active {
+  display: block;
+}
+
+.forum-embed {
+  min-height: 320px;
+}
+
+.forum-loading {
+  margin-bottom: 0.75rem;
+  color: rgba(0, 255, 204, 0.75);
+  font-family: 'VT323', monospace;
+}
+
+.forum-hint {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: rgba(0, 255, 204, 0.75);
+}
+
+.forum-hint a {
+  color: #ff99ff;
+}
+
+.noscript-hint {
+  display: inline-block;
+  margin-top: 1rem;
+  color: rgba(0, 255, 204, 0.65);
 }
 
 @media (max-width: 600px) {
@@ -411,7 +440,11 @@ body.terminal.forum-page .terminal-container {
     padding: 2rem 1rem 2.5rem;
   }
 
-  .tab-button {
+  .provider-tabs {
+    width: 100%;
+  }
+
+  .provider-tab {
     width: 100%;
     text-align: center;
   }
