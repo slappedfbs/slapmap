@@ -9,8 +9,11 @@ body.paywall-page {
   background: radial-gradient(circle at top, #050505 0%, #010101 60%, #000 100%);
   color: #e0fff9;
   min-height: 100vh;
+  height: auto;
   padding-top: 80px;
+  padding-bottom: 120px; 
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .paywall-page .navbar {
