@@ -77,6 +77,15 @@ body.paywall-page {
   gap: 1.5rem;
 }
 
+#checkout-card {
+  justify-self: center;
+  width: min(100%, 460px);
+}
+
+#checkout-card .btn-primary {
+  justify-self: center;
+}
+
 @media (min-width: 900px) {
   .grid.two-column {
     grid-template-columns: repeat(2, minmax(0, 1fr));
