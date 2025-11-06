@@ -1,6 +1,6 @@
 # SlapMap
 
-A hyper-specific guide to the East Bay rendered with Leaflet, CSV data, and lo-fi UI flourishes.
+A hyper-specific guide to the East Bay rendered with Leaflet, CSV data, and lo-fi UI flourishes. 
 
 ## Google My Maps Upsell
 
