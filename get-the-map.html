@@ -94,7 +94,14 @@
 
     <script>
       const params = new URLSearchParams(window.location.search);
-      const shouldUnlock = params.get('success') === '1' || params.get('preview') === '1';
+      const successParam = params.get('success');
+      const hasStripeSession = params.has('session_id');
+      const normalizedSuccess = (successParam || '').toLowerCase();
+      const successValues = new Set(['1', 'true', 'yes', 'success']);
+      const shouldUnlock =
+        successValues.has(normalizedSuccess) ||
+        params.get('preview') === '1' ||
+        hasStripeSession;
       const accessPanel = document.getElementById('map-access');
       const checkoutCard = document.getElementById('checkout-card');
 
